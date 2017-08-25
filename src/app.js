@@ -22,7 +22,7 @@ const store = createStore(reducers, middleware);
 //   // console.log('current price is: ', store.getState()[1].price);
 // })
 
-import BooksList from './components/pages/bookslist';
+import BooksList from './components/pages/booksList';
 
 render(
   <Provider store={store}>
