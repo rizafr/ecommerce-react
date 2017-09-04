@@ -32728,12 +32728,12 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 function booksReducers() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
     books: [{
-      id: 1,
+      _id: 1,
       title: 'Book title',
       description: 'this is the book description',
       price: 33.33
     }, {
-      id: 2,
+      _id: 2,
       title: 'Book title two',
       description: 'this is the second book description',
       price: 29.33
@@ -32758,7 +32758,7 @@ function booksReducers() {
       var currentBookToDelete = [].concat(_toConsumableArray(state.books));
       // Determine at which index in books array is the book to be deleted
       var indexToDelete = currentBookToDelete.findIndex(function (book) {
-        return book.id === action.payload.id;
+        return book._id === action.payload._id;
       });
       // use slice to remove the book at the specified index
       return { books: [].concat(_toConsumableArray(currentBookToDelete.slice(0, indexToDelete)), _toConsumableArray(currentBookToDelete.slice(indexToDelete + 1))) };
@@ -32769,7 +32769,7 @@ function booksReducers() {
       var currentBookToUpdate = [].concat(_toConsumableArray(state.books));
       // Determine at which index in books array is the book to be updated
       var indexToUpdate = currentBookToUpdate.findIndex(function (book) {
-        return book.id === action.payload.id;
+        return book._id === action.payload._id;
       });
       // Create a new book object with the new values. We'll use ...spread or concat
       var newBookToUpdate = _extends({}, currentBookToUpdate[indexToUpdate], {
@@ -32878,9 +32878,9 @@ var BooksList = function (_React$Component) {
       var booksList = this.props.books.map(function (booksArr) {
         return _react2.default.createElement(
           _reactBootstrap.Col,
-          { xs: 12, sm: 6, md: 4, key: booksArr.id },
+          { xs: 12, sm: 6, md: 4, key: booksArr._id },
           _react2.default.createElement(_bookItem2.default, {
-            id: booksArr.id,
+            _id: booksArr._id,
             title: booksArr.title,
             description: booksArr.description,
             price: booksArr.price
@@ -43981,7 +43981,7 @@ var BookItem = function (_React$Component) {
     key: 'handleCart',
     value: function handleCart() {
       var book = [].concat(_toConsumableArray(this.props.cart), [{
-        id: this.props.id,
+        _id: this.props._id,
         title: this.props.title,
         description: this.props.description,
         price: this.props.price
@@ -44220,7 +44220,7 @@ var Cart = function (_React$Component) {
       var cartItemsList = this.props.cart.map(function (cartArr) {
         return _react2.default.createElement(
           _reactBootstrap.Panel,
-          { key: cartArr.id },
+          { key: cartArr._id },
           _react2.default.createElement(
             _reactBootstrap.Row,
             null,
@@ -44230,9 +44230,50 @@ var Cart = function (_React$Component) {
               _react2.default.createElement(
                 'h6',
                 null,
-                cartArr.title,
-                ' - $',
+                cartArr.title
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { xs: 12, sm: 2 },
+              _react2.default.createElement(
+                'h6',
+                null,
+                'usd. ',
                 cartArr.price
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { xs: 12, sm: 2 },
+              _react2.default.createElement(
+                'h6',
+                null,
+                'qty. ',
+                _react2.default.createElement(_reactBootstrap.Label, { bsStyle: 'success' })
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { xs: 6, sm: 4 },
+              _react2.default.createElement(
+                _reactBootstrap.ButtonGroup,
+                { style: { minWidth: '300px' } },
+                _react2.default.createElement(
+                  _reactBootstrap.Button,
+                  { bsStyle: 'default', bsSize: 'small' },
+                  '-'
+                ),
+                _react2.default.createElement(
+                  _reactBootstrap.Button,
+                  { bsStyle: 'default', bsSize: 'small' },
+                  '+'
+                ),
+                _react2.default.createElement(
+                  _reactBootstrap.Button,
+                  { bsStyle: 'danger', bsSize: 'small' },
+                  'DELETE'
+                )
               )
             )
           )
