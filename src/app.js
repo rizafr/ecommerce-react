@@ -17,16 +17,17 @@ import {postBooks, deleteBooks, updateBooks} from './actions/booksActions';
 const middleware = applyMiddleware(logger);
 const store = createStore(reducers, middleware);
 
-// store.subscribe(function(){
-//   console.log('current state is: ', store.getState());
-//   // console.log('current price is: ', store.getState()[1].price);
-// })
-
 import BooksList from './components/pages/booksList';
+import Menu from './components/menu';
+import Footer from './components/footer';
 
 render(
   <Provider store={store}>
-    <BooksList />
+    <div>
+      <Menu />
+      <BooksList />
+      <Footer />
+    </div>
   </Provider>, document.getElementById('app')
 )
 
