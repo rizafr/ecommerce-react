@@ -1,8 +1,8 @@
 "use strict";
-import React from 'react';
+import React, { Component } from 'react';
 import {Nav, NavItem, Navbar, Badge} from 'react-bootstrap';
 
-class Menu extends React.Component{
+class Menu extends Component{
   render(){
     return(
       <Navbar inverse fixedTop>
@@ -19,8 +19,8 @@ class Menu extends React.Component{
           </Nav>
           <Nav pullRight>
             <NavItem eventKey={1} href="/admin">Admin</NavItem>
-            <NavItem eventKey={2} href="/cart">Your Cart
-              <Badge className="badge">1</Badge>
+            <NavItem eventKey={2} href="/cart">Your Cart&nbsp;
+              { (this.props.cartItemsNumber > 0)?(<Badge className="badge">{this.props.cartItemsNumber}</Badge>):('') }
             </NavItem>
           </Nav>
         </Navbar.Collapse>

@@ -21613,6 +21613,10 @@ var _cartActions = __webpack_require__(121);
 
 var _booksActions = __webpack_require__(122);
 
+var _main = __webpack_require__(547);
+
+var _main2 = _interopRequireDefault(_main);
+
 var _booksList = __webpack_require__(404);
 
 var _booksList2 = _interopRequireDefault(_booksList);
@@ -21624,10 +21628,6 @@ var _cart2 = _interopRequireDefault(_cart);
 var _booksForm = __webpack_require__(543);
 
 var _booksForm2 = _interopRequireDefault(_booksForm);
-
-var _main = __webpack_require__(547);
-
-var _main2 = _interopRequireDefault(_main);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37652,8 +37652,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var BooksList = function (_React$Component) {
-  _inherits(BooksList, _React$Component);
+var BooksList = function (_Component) {
+  _inherits(BooksList, _Component);
 
   function BooksList() {
     _classCallCheck(this, BooksList);
@@ -37705,7 +37705,7 @@ var BooksList = function (_React$Component) {
   }]);
 
   return BooksList;
-}(_react2.default.Component);
+}(_react.Component);
 
 function mapStateToProps(state) {
   return {
@@ -48763,8 +48763,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var BookItem = function (_React$Component) {
-  _inherits(BookItem, _React$Component);
+var BookItem = function (_Component) {
+  _inherits(BookItem, _Component);
 
   function BookItem() {
     _classCallCheck(this, BookItem);
@@ -48841,7 +48841,7 @@ var BookItem = function (_React$Component) {
   }]);
 
   return BookItem;
-}(_react2.default.Component);
+}(_react.Component);
 
 function mapStateToProps(state) {
   return {
@@ -48891,8 +48891,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var BooksForm = function (_React$Component) {
-  _inherits(BooksForm, _React$Component);
+var BooksForm = function (_Component) {
+  _inherits(BooksForm, _Component);
 
   function BooksForm() {
     _classCallCheck(this, BooksForm);
@@ -49013,7 +49013,7 @@ var BooksForm = function (_React$Component) {
   }]);
 
   return BooksForm;
-}(_react2.default.Component);
+}(_react.Component);
 
 function mapStatetoProps(state) {
   return {
@@ -49063,8 +49063,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Cart = function (_React$Component) {
-  _inherits(Cart, _React$Component);
+var Cart = function (_Component) {
+  _inherits(Cart, _Component);
 
   _createClass(Cart, [{
     key: 'onDelete',
@@ -49278,7 +49278,7 @@ var Cart = function (_React$Component) {
   }]);
 
   return Cart;
-}(_react2.default.Component);
+}(_react.Component);
 
 function mapStateToProps(state) {
   return {
@@ -49322,8 +49322,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Menu = function (_React$Component) {
-  _inherits(Menu, _React$Component);
+var Menu = function (_Component) {
+  _inherits(Menu, _Component);
 
   function Menu() {
     _classCallCheck(this, Menu);
@@ -49379,12 +49379,12 @@ var Menu = function (_React$Component) {
             _react2.default.createElement(
               _reactBootstrap.NavItem,
               { eventKey: 2, href: '/cart' },
-              'Your Cart',
-              _react2.default.createElement(
+              'Your Cart\xA0',
+              this.props.cartItemsNumber > 0 ? _react2.default.createElement(
                 _reactBootstrap.Badge,
                 { className: 'badge' },
-                '1'
-              )
+                this.props.cartItemsNumber
+              ) : ''
             )
           )
         )
@@ -49393,7 +49393,7 @@ var Menu = function (_React$Component) {
   }]);
 
   return Menu;
-}(_react2.default.Component);
+}(_react.Component);
 
 exports.default = Menu;
 
@@ -49480,6 +49480,8 @@ var _footer = __webpack_require__(546);
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _reactRedux = __webpack_require__(62);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -49503,7 +49505,7 @@ var Main = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_menu2.default, null),
+        _react2.default.createElement(_menu2.default, { cartItemsNumber: this.props.totalQty }),
         this.props.children,
         _react2.default.createElement(_footer2.default, null)
       );
@@ -49513,7 +49515,12 @@ var Main = function (_Component) {
   return Main;
 }(_react.Component);
 
-exports.default = Main;
+function mapStateToProps(state) {
+  return {
+    totalQty: state.cart.totalQty
+  };
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Main);
 
 /***/ })
 /******/ ]);

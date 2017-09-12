@@ -1,5 +1,5 @@
 "use strict";
-import React from 'react';
+import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getBooks} from '../../actions/booksActions';
@@ -9,7 +9,7 @@ import BookItem from './bookItem';
 import BooksForm from './booksForm';
 import Cart from './cart';
 
-class BooksList extends React.Component{
+class BooksList extends Component{
   componentDidMount(){
     // Dispatch an action
     this.props.getBooks();

@@ -1,5 +1,5 @@
 "use strict"
-import React from 'react';
+import React, { Component } from 'react';
 import {Well, Panel, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -7,7 +7,7 @@ import {findDOMNode} from 'react-dom';
 
 import {postBooks, deleteBooks} from '../../actions/booksActions';
 
-class BooksForm extends React.Component{
+class BooksForm extends Component{
 
   handleSubmit(){
     const book=[{

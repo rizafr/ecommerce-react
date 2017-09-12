@@ -20,10 +20,10 @@ import {postBooks, deleteBooks, updateBooks} from './actions/booksActions';
 const middleware = applyMiddleware(logger);
 const store = createStore(reducers, middleware);
 
+import Main from './main';
 import BooksList from './components/pages/booksList';
 import Cart from './components/pages/cart';
 import BooksForm from './components/pages/booksForm';
-import Main from './main';
 
 const Routes = (
   <Provider store={store}>

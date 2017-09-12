@@ -1,12 +1,12 @@
 "use strict";
-import React from 'react';
+import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Panel, Col, Row, Well, Button, ButtonGroup, Label, Modal} from 'react-bootstrap';
 import {bindActionCreators} from 'redux';
 import {deleteCartItem, updateCart} from '../../actions/cartActions';
 
 
-class Cart extends React.Component{
+class Cart extends Component{
 
   onDelete(_id){
     // Create a copy of the current array of books
