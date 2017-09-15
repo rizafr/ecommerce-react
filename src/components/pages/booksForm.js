@@ -1,5 +1,6 @@
 "use strict"
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Well, Panel, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -71,6 +72,10 @@ class BooksForm extends Component{
       </Well>
     )
   }
+}
+BooksForm.propTypes = {
+  text: PropTypes.string,
+  number: PropTypes.number
 }
 function mapStatetoProps(state){
   return {

@@ -1,5 +1,6 @@
 "use strict";
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Row, Col, Well, Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -51,6 +52,10 @@ class BookItem extends Component{
       </Well>
     )
   }
+}
+BookItem.propTypes = {
+  text: PropTypes.string,
+  number: PropTypes.number
 }
 function mapStateToProps(state){
   return{

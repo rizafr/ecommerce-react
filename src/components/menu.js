@@ -1,5 +1,6 @@
 "use strict";
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Nav, NavItem, Navbar, Badge} from 'react-bootstrap';
 
 class Menu extends Component{
@@ -27,5 +28,8 @@ class Menu extends Component{
       </Navbar>
     )
   }
+}
+Menu.propTypes = {
+  number: PropTypes.number
 }
 export default Menu;

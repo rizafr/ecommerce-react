@@ -1,5 +1,6 @@
 "use strict";
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getBooks} from '../../actions/booksActions';
@@ -41,6 +42,10 @@ class BooksList extends Component{
       </Grid>
     )
   }
+}
+BooksList.propTypes = {
+  text: PropTypes.string,
+  number: PropTypes.number
 }
 function mapStateToProps(state){
   return{

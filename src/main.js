@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Menu from './components/menu';
 import Footer from './components/footer';
 
@@ -14,6 +15,9 @@ class Main extends Component {
       </div>
     );
   }
+}
+Main.propTypes = {
+  children: React.PropTypes.element.isRequired
 }
 function mapStateToProps(state){
   return {

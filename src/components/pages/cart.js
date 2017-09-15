@@ -1,5 +1,6 @@
 "use strict";
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Panel, Col, Row, Well, Button, ButtonGroup, Label, Modal} from 'react-bootstrap';
 import {bindActionCreators} from 'redux';
@@ -109,6 +110,10 @@ class Cart extends Component{
       </Panel>
     )
   }
+}
+Cart.propTypes = {
+  text: PropTypes.string,
+  number: PropTypes.number
 }
 function mapStateToProps(state){
   return{
